@@ -64,13 +64,13 @@ Onboarding runs once; click tracking, bi-weekly evaluation, and AI remarketing t
 
 - **Trigger:** Scheduled run, every two weeks.
 - **Logic:**
-  1. Read the click tracking sheet and aggregate click history by interest category and total volume (Code node).
+  1. Read the click tracking sheet and aggregate click history by subscriber, interest category, and discount code ([`code/aggregate-click-history.js`](code/aggregate-click-history.js)).
   2. Loop over each subscriber individually (Loop Over Items).
   3. Check the remarketing record sheet for an existing entry for that subscriber (If node):
-     - **Existing subscriber (true)** — update their record: refresh tier and click stats, discount code carried over rather than reissued.
-     - **New subscriber (false)** — append a new record: assign an initial tier and generate a discount code.
+     - **Existing subscriber (true)** — update their record: refresh tier and click stats.
+     - **New subscriber (false)** — append a new record with the tier and discount code from step 1.
   4. Pass click-count-by-category and customer tier to an AI Agent node (Gemini as the underlying chat model), which generates the email body only.
-  5. Assemble the final email: AI-generated body plus a fixed-format subject line and remarketing link, built in JavaScript in a Code node.
+  5. Assemble the final email: AI-generated body plus a fixed-format subject line, tracked links, and a matched header image, built in JavaScript ([`code/assemble-remarketing-email.js`](code/assemble-remarketing-email.js)).
   6. Send the email.
 - **Output:** Personalized, tier-aware remarketing emails with a built-in mechanism to measure actual conversion, not just engagement.
 
