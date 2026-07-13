@@ -99,7 +99,7 @@ Current figures reflect a pilot cohort during initial deployment.
 
 *Dashboard built from synthetic demo data (n = 25 subscribers) to illustrate the reporting output; it mirrors the aggregation logic implemented in the underlying Google Sheets.*
 
-Sample dataset: [`Suiga_Demo_Dataset.xlsx`](Suiga_Demo_Dataset.xlsx)
+Sample dataset: [`data/Suiga_Demo_Dataset.xlsx`](data/Suiga_Demo_Dataset.xlsx)
 
 ## Technical stack
 
