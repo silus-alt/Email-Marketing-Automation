@@ -1,16 +1,5 @@
-/**
- * Bi-weekly AI remarketing workflow — Code node 2
- * "AI Agent" -> [this node] -> "Send a message"
- *
- * Combines the AI-generated email body with a fixed-format footer:
- * a short call-to-action, three tracked links (one per interest
- * category), and a header image matched to the subscriber's
- * dominant interest. Ties between categories fall back to a
- * dedicated "mixed interest" image rather than picking one at random.
- *
- * Cloudinary URLs and the localhost webhook host are left as-is from
- * the actual workflow.
- */
+// Bi-weekly AI remarketing workflow — appends tracked links and a
+// dominant-interest header image to the AI-generated email body.
 
 const aiContent = $('AI Agent').first().json.output;
 const email = $('Loop Over Items').item.json.email;
