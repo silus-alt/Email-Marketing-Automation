@@ -84,6 +84,20 @@ Onboarding runs once; click tracking, bi-weekly evaluation, and AI remarketing t
 - **Model input:** Per-subscriber click count by interest category, and customer tier.
 - **Generation scope:** The AI Agent generates the email body only. Subject line and remarketing link follow a fixed format and are assembled separately in JavaScript, keeping structural elements — particularly the tracked link — outside the model's control.
 
+**Sample output:**
+ 
+> **Suiga Picks, Just for You**
+>
+> Hi there! Looks like you spent some time exploring Suiga this afternoon — sounds like you could use a little downtime. Our jasmine-scented Ethiopian Yirgacheffe pour-over or the silky nitro cold brew would be perfect for that. We've also got a sharp pair of Levi's 501s waiting to be discovered in the shop. Stop by our store at [Store Address] — we'd love to see you. Hope you have a relaxing afternoon.
+>
+> **Your exclusive discount code: SUIGA-DEMO247**
+>
+> Explore Suiga: ☕ View menu &nbsp;&nbsp; 🛍 The shop &nbsp;&nbsp; 📍 Find us
+>
+> ![Header image matched to dominant interest category](https://res.cloudinary.com/dejpsznvh/image/upload/v1780804518/S__65110023_xig88b.jpg)
+>
+> *— Sample output from the AI Agent + Code node pipeline*
+
 ## Results
 
 | Metric | Role |
